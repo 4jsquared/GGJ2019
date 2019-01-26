@@ -43,6 +43,9 @@ public class Storyteller : MonoBehaviour
 		// Intialise characters
 		foreach (Character c in characters)
 			c.Initialise(actions.Where(action => action.IsPrimaryCharacter(c)));
+
+		// Initialise player
+		player.Initialise(world);
 	}
 	
 	// Update is called once per frame
