@@ -5,14 +5,25 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 	public float money;
+	public Rigidbody2D root;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		
+	}
+
+	public void GoTo(Room room)
+	{
+		// TODO transition
+		Vector2 target = room.GetPlayerTarget();
+
+		root.MovePosition(target);
 	}
 }
