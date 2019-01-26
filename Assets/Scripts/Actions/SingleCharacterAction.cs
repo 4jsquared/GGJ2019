@@ -17,9 +17,9 @@ public class SingleCharacterAction : StoryAction
 	public override void DoAction()
 	{
 		// Do character effects
-		character.health.IncrementValue(health);
-		character.happiness.IncrementValue(happiness);
-		character.social.IncrementValue(social);
+		character.health.Increment(health);
+		character.happiness.Increment(happiness);
+		character.social.Increment(social);
 
 		// Cost money
 		player.money -= money;

@@ -8,8 +8,11 @@ using UnityEngine;
 [System.Serializable]
 public struct Statistic
 {
-    // The actual value
-    public float value;
+	// Code side accesor
+	public float Value { get { return value; } }
+
+    // The actual value (this is not directly settable, use relevant methods)
+    [SerializeField] private float value;
 
     // The bounds
     [SerializeField] private float minimum;
@@ -20,12 +23,18 @@ public struct Statistic
 
     public void Update(float timeIncrement)
     {
-        value += changePerSecond * timeIncrement;
-        value = Mathf.Clamp(value, minimum, maximum);
+		Increment(timeIncrement * changePerSecond);
     }
 
-    public void IncrementValue(float value)
+    public void Increment(float inValue)
     {
-        value += value;
-    }
+        value += inValue;
+		value = Mathf.Clamp(value, minimum, maximum);
+	}
+
+	public void Set(float inValue)
+	{
+		value = inValue;
+		value = Mathf.Clamp(value, minimum, maximum);
+	}
 }
