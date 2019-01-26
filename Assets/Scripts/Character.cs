@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 using UnityEngine.UI;
 
-public class Character : MonoBehaviour {
+public class Character : MonoBehaviour
+{
 	// General well being
 	public Statistic health;
 	public Statistic happiness;
@@ -15,6 +17,8 @@ public class Character : MonoBehaviour {
     public float healthThreshHoldValue;
     public float happinessThreasholdValue;
     public float socialThresholdValue;
+	// Actions
+	private IEnumerable<StoryAction> characterActions;
 
 
     //Threshold objects
@@ -58,8 +62,30 @@ public class Character : MonoBehaviour {
         CheckSocialThreshHold();
         FindLowestThreshold();
         DisplayIconOfLowestStatistics();
+	// Use this for initialization
+	void Start ()
+	{
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
 	}
 
+	public void Initialise(IEnumerable<StoryAction> inActions)
+	{
+		characterActions = inActions;
+	}
+
+	// List of available actions. This is auto populated
+	public IEnumerable<StoryAction> GetAvailableActions()
+	{
+		return characterActions.Where(c => c.IsAvailable());
+	}
+
+	// Update state
+	public void UpdateStats(float timeIncrement)
     
     void DisplayIconOfLowestStatistics()
     {
