@@ -14,9 +14,6 @@ public class SingleCharacterAction : StoryAction
 
 	[SerializeField] private float money;
 
-	private World world;
-	private Player player;
-
 	public override void DoAction()
 	{
 		// Do character effects
@@ -24,15 +21,11 @@ public class SingleCharacterAction : StoryAction
 		character.happiness.IncrementValue(happiness);
 		character.social.IncrementValue(social);
 
+		// Cost money
 		player.money -= money;
 
 		// Increment time
 		world.time += time;
-	}
-
-	public void Initialise(World world, Player player)
-	{
-		
 	}
 
 	public override bool IsAvailable()

@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Storyteller : MonoBehaviour
 {
+	// World
+	public World world;
+	public Player player;
 	public Character[] characters;
 
+
+	// Events
 	public List<StoryEvent> onTriggerEvents;
 	public List<StoryEvent> randomEvents;
 
@@ -17,10 +22,18 @@ public class Storyteller : MonoBehaviour
 	private float accumulatedRandomEventTime;
 
 
+	// Actions
+	public List<StoryAction> actions;
+
+
 	// Use this for initialization
 	void Start ()
 	{
 		runningTriggeredEvents = new List<StoryEvent>();
+
+		// Initialise actions
+		foreach (StoryAction action in actions)
+			action.Initialise(world, player);
 	}
 	
 	// Update is called once per frame
