@@ -48,6 +48,15 @@ public class Storyteller : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		// TEST ACTION
+		foreach (Character c in characters)
+		{
+			foreach (StoryAction a in c.GetAvailableActions())
+			{
+				a.DoAction(c);
+			}
+		}
+
 		// Calculate elapsed time since last update
 		float timeIncrement = world.time - elapsedTime;
 		elapsedTime = world.time;

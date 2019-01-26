@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SingleCharacterAction : StoryAction
 {
-	[SerializeField] private Character character;
+	[SerializeField] private Character[] applicableCharacters;
 
 	[SerializeField] private float health;
 	[SerializeField] private float happiness;
@@ -14,12 +16,15 @@ public class SingleCharacterAction : StoryAction
 
 	[SerializeField] private float money;
 
-	public override void DoAction()
+	public override void DoAction(Character inCharacter)
 	{
+		if (!applicableCharacters.Contains(inCharacter))
+			throw new InvalidOperationException("Tried to apply action with invalid selected character");
+
 		// Do character effects
-		character.health.Increment(health);
-		character.happiness.Increment(happiness);
-		character.social.Increment(social);
+		inCharacter.health.Increment(health);
+		inCharacter.happiness.Increment(happiness);
+		inCharacter.social.Increment(social);
 
 		// Cost money
 		player.money -= money;
@@ -41,6 +46,6 @@ public class SingleCharacterAction : StoryAction
 
 	public override bool IsPrimaryCharacter(Character inCharacter)
 	{
-		return inCharacter == character;
+		return applicableCharacters.Contains(inCharacter); ;
 	}
 }
