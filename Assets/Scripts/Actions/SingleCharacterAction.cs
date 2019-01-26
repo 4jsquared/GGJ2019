@@ -34,6 +34,11 @@ public class SingleCharacterAction : StoryAction
 		return player.money >= money;
 	}
 
+	public override bool IsPlayerAction()
+	{
+		return false;
+	}
+
 	public override bool IsPrimaryCharacter(Character inCharacter)
 	{
 		return inCharacter == character;
