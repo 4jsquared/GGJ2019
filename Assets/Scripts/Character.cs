@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 	// General well being
-	[SerializeField] private Statistic health;
-	[SerializeField] private Statistic happiness;
+	public Statistic health;
+	public Statistic happiness;
 
 	// Relationship with PC
-	[SerializeField] private Statistic social;
+	public Statistic social;
 
 
 	// Use this for initialization
