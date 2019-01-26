@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e368cc8131fc140b8d2f239329eb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spinSpeed: 1
+  spinSpeed: 100
 --- !u!4 &173846265
 Transform:
   m_ObjectHideFlags: 0
@@ -641,7 +641,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 173846263}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.066, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 885651495}
@@ -960,7 +960,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1479197750}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &357119194
 MonoBehaviour:
@@ -1408,6 +1408,54 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &700877889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 700877890}
+  - component: {fileID: 700877891}
+  m_Layer: 0
+  m_Name: Talk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &700877890
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 700877889}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1479197750}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &700877891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 700877889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf67a5d4a13b48845b327df2439d8348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: 
+  applicableCharacters:
+  - {fileID: 2032492496}
+  health: 5
+  happiness: 5
+  social: 10
+  time: 1
+  money: 0
 --- !u!1 &731062906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,7 +2094,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 885651494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.058, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 173846265}
@@ -2636,8 +2684,8 @@ MonoBehaviour:
   health: 20
   happiness: 5
   social: 5
-  time: -10
-  money: 1
+  time: 1
+  money: -10
 --- !u!1 &1353999409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,8 +3002,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1349980990}
-  - {fileID: 357119193}
   - {fileID: 1537387186}
+  - {fileID: 700877890}
+  - {fileID: 357119193}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2986,7 +3035,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1479197750}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1537387187
 MonoBehaviour:
@@ -3004,11 +3053,11 @@ MonoBehaviour:
   - {fileID: 1622149257}
   - {fileID: 882484469}
   - {fileID: 696563273}
-  health: 20
-  happiness: 5
+  health: 5
+  happiness: 20
   social: 5
-  time: -10
-  money: 1
+  time: 1
+  money: -5
 --- !u!1 &1589680120
 GameObject:
   m_ObjectHideFlags: 0
