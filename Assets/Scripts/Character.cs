@@ -22,10 +22,10 @@ public class Character : MonoBehaviour {
 	}
 
 	// Update state
-	public void UpdateStats()
+	public void UpdateStats(float timeIncrement)
 	{
-		health.Update();
-		happiness.Update();
-		social.Update();
+		health.Update(timeIncrement);
+		happiness.Update(timeIncrement);
+		social.Update(timeIncrement);
 	}
 }

@@ -18,9 +18,9 @@ public struct Statistic
     // The natural rate of change
     [SerializeField] private float changePerSecond;
 
-    public void Update()
+    public void Update(float timeIncrement)
     {
-        value += changePerSecond * Time.deltaTime;
+        value += changePerSecond * timeIncrement;
         value = Mathf.Clamp(value, minimum, maximum);
     }
 

@@ -16,14 +16,18 @@ public class Storyteller : MonoBehaviour
 
 	public float randomEventInterval;
 
+
+	// Actions
+	public List<StoryAction> actions;
+
+
+	// Internal tracking
+	private float elapsedTime;
+
 	private List<StoryEvent> runningTriggeredEvents;
 	private StoryEvent runningRandomEvent;
 
 	private float accumulatedRandomEventTime;
-
-
-	// Actions
-	public List<StoryAction> actions;
 
 
 	// Use this for initialization
@@ -39,9 +43,13 @@ public class Storyteller : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		// Calculate elapsed time since last update
+		float timeIncrement = world.time - elapsedTime;
+		elapsedTime = world.time;
+
 		// Update the stats of every object
 		foreach (Character c in characters)
-			c.UpdateStats();
+			c.UpdateStats(timeIncrement);
 
 		// Update any in flight events
 		for (int i = 0; i < runningTriggeredEvents.Count; )
@@ -92,7 +100,7 @@ public class Storyteller : MonoBehaviour
 		if (runningRandomEvent == null && randomEvents.Count > 0)
 		{
 			// Don't accumulate time while an event is running - we don't want to keep triggering these.
-			accumulatedRandomEventTime += Time.deltaTime;
+			accumulatedRandomEventTime += timeIncrement;
 			if (accumulatedRandomEventTime > randomEventInterval)
 			{
 				accumulatedRandomEventTime -= randomEventInterval;
