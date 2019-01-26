@@ -338,6 +338,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &344484816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 344484817}
+  m_Layer: 0
+  m_Name: UpstairsStairs
+  m_TagString: Untagged
+  m_Icon: {fileID: -5765324120231101433, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &344484817
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 344484816}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.31, y: -0.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 790573032}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &357119192
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +537,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 10000
   root: {fileID: 731062910}
+  targetRoom: {fileID: 1298740076}
+  moveSpeed: 4
 --- !u!212 &731062909
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -604,8 +634,10 @@ Transform:
   - {fileID: 513531392}
   - {fileID: 1783283011}
   - {fileID: 598757924}
+  - {fileID: 344484817}
+  - {fileID: 1436786638}
   m_Father: {fileID: 1998596019}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &858370913
 GameObject:
@@ -724,6 +756,34 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1113880055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1113880056}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1113880056
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1113880055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2742823, y: -0.1655458, z: 0.0044824197}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1191097268
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,6 +826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorMarkers:
   - {fileID: 1783283010}
+  - {fileID: 1436786637}
   - {fileID: 598757923}
 --- !u!1 &1240319071
 GameObject:
@@ -778,6 +839,7 @@ GameObject:
   - component: {fileID: 1240319074}
   - component: {fileID: 1240319073}
   - component: {fileID: 1240319075}
+  - component: {fileID: 1240319076}
   m_Layer: 0
   m_Name: GameWorld
   m_TagString: Untagged
@@ -851,6 +913,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storyteller: {fileID: 1240319074}
+--- !u!114 &1240319076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1240319071}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b11ab9495d6f74bb726f5e029fb6d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whistleAudio: {fileID: 0}
+  guitarAudio: {fileID: 0}
+  backingAudio: {fileID: 0}
+  sadAudio: {fileID: 0}
 --- !u!1 &1298740074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,7 +1092,79 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorMarkers:
   - {fileID: 1353999409}
+  - {fileID: 344484816}
   - {fileID: 1899237758}
+--- !u!1 &1436786637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1436786638}
+  m_Layer: 0
+  m_Name: DownstairsStairs
+  m_TagString: Untagged
+  m_Icon: {fileID: -5765324120231101433, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1436786638
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1436786637}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.04, y: -3.66, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 790573032}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1467924042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1467924043}
+  - component: {fileID: 1467924044}
+  m_Layer: 0
+  m_Name: Stairs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1467924043
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1467924042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1998596019}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1467924044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1467924042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00199a9914a08f42a8da61e15b0718d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorMarkers:
+  - {fileID: 344484816}
+  - {fileID: 1436786637}
 --- !u!1 &1479197749
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,6 +1382,7 @@ Transform:
   - {fileID: 1191097269}
   - {fileID: 858370914}
   - {fileID: 1368749208}
+  - {fileID: 1467924043}
   - {fileID: 790573032}
   m_Father: {fileID: 1240319072}
   m_RootOrder: 2

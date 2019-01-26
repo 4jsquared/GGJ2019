@@ -106,6 +106,6 @@ public class World : MonoBehaviour
 		}
 
 		// It's in the reverse order, so return in the correct order.
-		return Enumerable.Reverse(route);
+		return route;
 	}
 }
