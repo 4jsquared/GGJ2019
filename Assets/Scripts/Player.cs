@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 	public float money;
 	public Rigidbody2D root;
 
+	private Queue<GameObject> route;
+
 	// Use this for initialization
 	void Start ()
 	{

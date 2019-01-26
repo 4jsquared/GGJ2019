@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Room : MonoBehaviour
 {
+	public GameObject[] FloorMarkers { get { return floorMarkers; } }
 	[SerializeField] private GameObject[] floorMarkers;
 
 	public Vector2 GetPlayerTarget()
