@@ -33,4 +33,9 @@ public class SingleCharacterAction : StoryAction
 		// TODO Check other factors for availablity
 		return player.money >= money;
 	}
+
+	public override bool IsPrimaryCharacter(Character inCharacter)
+	{
+		return inCharacter == character;
+	}
 }

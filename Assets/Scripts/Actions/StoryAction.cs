@@ -13,6 +13,9 @@ public abstract class StoryAction : MonoBehaviour
 		player = inPlayer;
 	}
 
+	// Does this action primarily affect this character.
+	// This is used to determine whether to show this action in the list of character specific actions.
+	public abstract bool IsPrimaryCharacter(Character inCharacter);
 	public abstract bool IsAvailable();
 	public abstract void DoAction();
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Storyteller : MonoBehaviour
@@ -38,6 +39,10 @@ public class Storyteller : MonoBehaviour
 		// Initialise actions
 		foreach (StoryAction action in actions)
 			action.Initialise(world, player);
+
+		// Intialise characters
+		foreach (Character c in characters)
+			c.Initialise(actions.Where(action => action.IsPrimaryCharacter(c)));
 	}
 	
 	// Update is called once per frame
