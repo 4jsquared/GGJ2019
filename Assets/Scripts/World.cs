@@ -66,6 +66,15 @@ public class World : MonoBehaviour
 		{
 			web[fromMarker] = null;
 			toProcess.Enqueue(fromMarker);
+
+			if (to.FloorMarkers.Contains(fromMarker))
+			{
+				// There's only one intermediate marker, so just return that
+				List<GameObject> singleItemRoute = new List<GameObject>();
+				singleItemRoute.Add(fromMarker);
+
+				return singleItemRoute;
+			}
 		}
 
 		// For each node to process
@@ -106,6 +115,6 @@ public class World : MonoBehaviour
 		}
 
 		// It's in the reverse order, so return in the correct order.
-		return route;
+		return Enumerable.Reverse(route);
 	}
 }
