@@ -33,6 +33,6 @@ public abstract class StoryAction : MonoBehaviour
 	// Is the action currently available.
 	public abstract bool IsAvailable();
 
-	// Actually do the action
-	public abstract void DoAction();
+	// Actually do the action - pass in the selected character if need be.
+	public abstract void DoAction(Character inCharacter);
 }
