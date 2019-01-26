@@ -55,23 +55,15 @@ public class Character : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update() {
         lowestThreshold = emptyThreshold;
         CheckHealthThreshHold();
         CheckHappinessThreshHold();
         CheckSocialThreshHold();
         FindLowestThreshold();
         DisplayIconOfLowestStatistics();
+    }
 	// Use this for initialization
-	void Start ()
-	{
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
 
 	public void Initialise(IEnumerable<StoryAction> inActions)
 	{
@@ -84,8 +76,6 @@ public class Character : MonoBehaviour
 		return characterActions.Where(c => c.IsAvailable());
 	}
 
-	// Update state
-	public void UpdateStats(float timeIncrement)
     
     void DisplayIconOfLowestStatistics()
     {
