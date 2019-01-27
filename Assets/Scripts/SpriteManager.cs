@@ -9,47 +9,36 @@ public class SpriteManager : MonoBehaviour {
     public Sprite bdaySprite;
     public Sprite normSprite;
 
-    public int bdayDate;
+    private SpriteRenderer mySprite;
 
-    public SpriteRenderer mySprite;
+    public bool xmasTime { private get; set; }
+	public bool holiTime { private get; set; }
+	public bool bdayTime { private get; set; }
 
-    public bool xmasTime = false;
-    private bool holiTime = false;
-    private bool bdayTime = false;
-    public bool normTime = true;
-
-    // Use this for initialization
-    void Start ()
+	// Use this for initialization
+	void Start ()
     {
-       // SpriteRenderer mySprite = GetComponent<SpriteRenderer>();
+       mySprite = GetComponent<SpriteRenderer>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (normTime == true)
-        {
-
-            xmasTime = false;
-            bdayTime = false;
-            holiTime = false;
-            mySprite.sprite = normSprite;
-        }
         if (holiTime == true)
         {
-            normTime = false;
             mySprite.sprite = holiSprite;
         }
-        if (xmasTime == true)
+        else if (xmasTime == true)
         {
-            normTime = false;
             mySprite.sprite = xmasSprite;
-
         }
-        if (bdayTime == true)
+        else if (bdayTime == true)
         {
-            normTime = false;
             mySprite.sprite = bdaySprite;
-        }
-    }
+		}
+		else
+		{
+			mySprite.sprite = normSprite;
+		}
+	}
 }

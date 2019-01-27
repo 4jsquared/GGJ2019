@@ -454,6 +454,7 @@ GameObject:
   - component: {fileID: 144202243}
   - component: {fileID: 144202241}
   - component: {fileID: 144202242}
+  - component: {fileID: 144202245}
   m_Layer: 0
   m_Name: Teen
   m_TagString: Untagged
@@ -662,6 +663,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &144202245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 144202239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f1210aa221c824fb2983d3c312dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xmasSprite: {fileID: 21300000, guid: b58ae4343642cf3409eacd452e6a3c1d, type: 3}
+  holiSprite: {fileID: 21300000, guid: 8ab19b9f10123c44bb60902a80fffd9f, type: 3}
+  bdaySprite: {fileID: 21300000, guid: 4fb5ebf1823912f40882bb2496b16b40, type: 3}
+  normSprite: {fileID: 21300000, guid: d6b7f75b7c0573548ba2aa78df926d19, type: 3}
 --- !u!1 &148118132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1152,59 @@ Transform:
   m_Father: {fileID: 781738484}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &331884509
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 331884510}
+  - component: {fileID: 331884511}
+  m_Layer: 0
+  m_Name: TeenBirthday
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &331884510
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331884509}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 609334594}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331884511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 331884509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bcc15d6c606b349871a35502738f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShouldRepeat: 0
+  StartTime: 10
+  Duration: 24
+  RepeatAfterDuration: 0
+  character: {fileID: 144202243}
+  visualOnlyCharacters:
+  - {fileID: 882484468}
+  - {fileID: 696563275}
+  health: 0
+  happiness: 0
+  social: 0
+  time: 1
+  money: 0
 --- !u!1 &344484816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 0
-  time: 1
+  time: 8
   money: 15
   goToRoom: {fileID: 1753623110}
   returnToRoom: {fileID: 455487956}
@@ -1722,6 +1791,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1698583428}
+  - {fileID: 1367034514}
+  - {fileID: 331884510}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1863,6 +1934,7 @@ GameObject:
   - component: {fileID: 696563273}
   - component: {fileID: 696563271}
   - component: {fileID: 696563272}
+  - component: {fileID: 696563275}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -2071,6 +2143,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &696563275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 696563269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f1210aa221c824fb2983d3c312dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xmasSprite: {fileID: 21300000, guid: 2ed926c509d4bd443865a3411b790e1d, type: 3}
+  holiSprite: {fileID: 21300000, guid: 1187ae0593168d54dab78e63ccebfc2c, type: 3}
+  bdaySprite: {fileID: 21300000, guid: 38b17a1daf9725b48b2a636291f02fa5, type: 3}
+  normSprite: {fileID: 21300000, guid: d9a6bf786401a9945af73925a45ce0a8, type: 3}
 --- !u!1 &700877889
 GameObject:
   m_ObjectHideFlags: 0
@@ -2532,6 +2619,7 @@ GameObject:
   - component: {fileID: 882484469}
   - component: {fileID: 882484467}
   - component: {fileID: 882484471}
+  - component: {fileID: 882484468}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -2632,6 +2720,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &882484468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 882484465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f1210aa221c824fb2983d3c312dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xmasSprite: {fileID: 21300000, guid: 0ea77397021eb3b499f499b54dce94ff, type: 3}
+  holiSprite: {fileID: 21300000, guid: 428d3785752c2304992f88846e9147f8, type: 3}
+  bdaySprite: {fileID: 21300000, guid: 00ac790b94e8c934fad5e5357b2571cb, type: 3}
+  normSprite: {fileID: 21300000, guid: e43d462dc0181694680d4cdbe7983a54, type: 3}
 --- !u!114 &882484469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3559,6 +3662,8 @@ MonoBehaviour:
   clockMultiplierFast: 20
   onTriggerEvents:
   - {fileID: 1698583429}
+  - {fileID: 1367034515}
+  - {fileID: 331884511}
   randomEvents: []
   randomEventInterval: 0
   actions:
@@ -3799,6 +3904,59 @@ Transform:
   m_Father: {fileID: 790573032}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1367034513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1367034514}
+  - component: {fileID: 1367034515}
+  m_Layer: 0
+  m_Name: ChildBirthday
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1367034514
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367034513}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 609334594}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1367034515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1367034513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bcc15d6c606b349871a35502738f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShouldRepeat: 0
+  StartTime: 10
+  Duration: 24
+  RepeatAfterDuration: 0
+  character: {fileID: 1622149257}
+  visualOnlyCharacters:
+  - {fileID: 882484468}
+  - {fileID: 696563275}
+  health: 0
+  happiness: 0
+  social: 0
+  time: 1
+  money: 0
 --- !u!1 &1368749207
 GameObject:
   m_ObjectHideFlags: 0
@@ -4331,6 +4489,7 @@ GameObject:
   - component: {fileID: 1622149257}
   - component: {fileID: 1622149255}
   - component: {fileID: 1622149256}
+  - component: {fileID: 1622149259}
   m_Layer: 0
   m_Name: Child
   m_TagString: Untagged
@@ -4539,6 +4698,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1622149259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1622149253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f1210aa221c824fb2983d3c312dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xmasSprite: {fileID: 21300000, guid: e650403e772f66d4e9b27335259e1ee5, type: 3}
+  holiSprite: {fileID: 21300000, guid: b497487d13b69f748809fd5875e631a3, type: 3}
+  bdaySprite: {fileID: 21300000, guid: 68eaa9f5439b9fd4caf2b7dd5a2c5965, type: 3}
+  normSprite: {fileID: 21300000, guid: a98248377dfcc5c4fa726cd4ba88508d, type: 3}
 --- !u!1 &1658563654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4747,11 +4921,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShouldRepeat: 0
-  StartTime: 0
-  Duration: 0
+  StartTime: 10
+  Duration: 24
   RepeatAfterDuration: 0
   character: {fileID: 2032492496}
-  visualOnlyCharacters: []
+  visualOnlyCharacters:
+  - {fileID: 882484468}
+  - {fileID: 696563275}
   health: 0
   happiness: 0
   social: 0
@@ -5388,6 +5564,7 @@ GameObject:
   - component: {fileID: 2032492496}
   - component: {fileID: 2032492500}
   - component: {fileID: 2032492499}
+  - component: {fileID: 2032492501}
   m_Layer: 0
   m_Name: Woman
   m_TagString: Untagged
@@ -5596,6 +5773,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &2032492501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2032492495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f1210aa221c824fb2983d3c312dda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xmasSprite: {fileID: 21300000, guid: 2f99a1124e79e6a4685dae393da4db30, type: 3}
+  holiSprite: {fileID: 21300000, guid: 2e14d635ed76c354180e44bb4ebbb8a0, type: 3}
+  bdaySprite: {fileID: 21300000, guid: 74eb1b2071418614a933755580a6c19e, type: 3}
+  normSprite: {fileID: 21300000, guid: 9660e4418339d7c4c88ae18e891b3700, type: 3}
 --- !u!1 &2094746985
 GameObject:
   m_ObjectHideFlags: 0

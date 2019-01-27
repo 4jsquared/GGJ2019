@@ -18,17 +18,17 @@ public class TimedEvent : StoryEvent
 
 	public override bool IsTriggered()
 	{
-		return Time.time > StartTime;
+		return world.time > StartTime;
 	}
 
 	public override void StartEvent()
 	{
-		EndTime = Time.time + Duration;
+		EndTime = world.time + Duration;
 	}
 
 	public override bool UpdateEvent()
 	{
-		if (Time.time < EndTime)
+		if (world.time < EndTime)
 		{
 			// Event still in progress
 			return true;
@@ -38,7 +38,7 @@ public class TimedEvent : StoryEvent
 			// Event ended, check if we need to reset the timer
 			if (ShouldRepeat)
 			{
-				StartTime = Time.time + RepeatAfterDuration;
+				StartTime = world.time + RepeatAfterDuration;
 			}
 
 			return false;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BirthdayEvent : TimedEvent
 {
 	public Character character;
-	public Character[] visualOnlyCharacters;
+	public SpriteManager[] visualOnlyCharacters;
 
 	[SerializeField] private float health;
 	[SerializeField] private float happiness;
@@ -24,6 +24,9 @@ public class BirthdayEvent : TimedEvent
 			player.money += money;
 
 			// Switch character art
+			character.GetComponent<SpriteManager>().bdayTime = true;
+			foreach (SpriteManager vc in visualOnlyCharacters)
+				vc.bdayTime = true;
 
 			// Adjust character stats
 			character.health.Increment(health);
@@ -43,6 +46,9 @@ public class BirthdayEvent : TimedEvent
 		if (!isRunning)
 		{
 			// Switch back to normal sprite
+			character.GetComponent<SpriteManager>().bdayTime = false;
+			foreach (SpriteManager vc in visualOnlyCharacters)
+				vc.bdayTime = false;
 		}
 
 		return isRunning;

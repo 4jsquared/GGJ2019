@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class World : MonoBehaviour
 {
-	public float time;
+	public float time = 0;
 
 	public Room[] rooms;
 
