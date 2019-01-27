@@ -54,7 +54,7 @@ public class Storyteller : MonoBehaviour
 			c.Initialise(this, actions.Where(action => action.IsPrimaryCharacter(c)));
 
 		// Initialise player
-		player.Initialise(world);
+		player.Initialise(world, this);
 
 		// Initialise clocks
 		foreach (ClockSpinner clock in clocks)

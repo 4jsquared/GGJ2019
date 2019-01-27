@@ -21,5 +21,7 @@ public class _Tester : MonoBehaviour
 			storyteller.player.GoTo(storyteller.world.rooms[4], () => { });
 		if (Input.GetKeyDown(KeyCode.Alpha5))
 			storyteller.player.GoTo(storyteller.world.rooms[5], () => { });
+		if (Input.GetKeyDown(KeyCode.Alpha6))
+			storyteller.player.GoTo(storyteller.world.rooms[6], () => { });
 	}
 }

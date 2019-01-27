@@ -6,10 +6,15 @@ public class OptionsAction : MonoBehaviour
 {
 	public Character character;
 	public StoryAction action;
+	public Player player;
 
 	private void OnMouseDown()
 	{
 		action.Trigger(character);
-		character.HideActions();
+
+		if (character)
+			character.HideActions();
+		if (player)
+			player.HideActions();
 	}
 }

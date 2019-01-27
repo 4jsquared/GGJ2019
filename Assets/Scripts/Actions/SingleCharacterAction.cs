@@ -51,7 +51,7 @@ public class SingleCharacterAction : StoryAction
 			selectedCharacter.social.Increment(social * fraction);
 
 			// Cost money
-			player.money -= money * fraction;
+			player.money += money * fraction;
 
 			// Increment time
 			world.time += time * fraction;

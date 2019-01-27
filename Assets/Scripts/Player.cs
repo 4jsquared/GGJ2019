@@ -14,10 +14,14 @@ public class Player : MonoBehaviour
 	private Queue<GameObject> route;
 	private Vector2 nextTarget;
 	private Action targetReached;
-	private World world;
 
-	// Sprites for actions
+	private World world;
+	private Storyteller storyteller;
+
+	// Sprites for work
 	[SerializeField] private GameObject workBubble;
+
+	private bool showWork = false;
 
 	// Use this for initialization
 	void Start ()
@@ -27,6 +31,9 @@ public class Player : MonoBehaviour
 		// Make sure we start in the correct location
 		nextTarget = targetRoom.GetPlayerTarget();
 		root.MovePosition(nextTarget);
+
+		// And the work bubble is hidden
+		workBubble.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -86,11 +93,32 @@ public class Player : MonoBehaviour
 				targetReached = null;
 			}
 		}
+
+
+		// Update the work bubble
+		if (showWork && storyteller.IsInteractive)
+			workBubble.SetActive(true);
+		else
+			workBubble.SetActive(false);
 	}
 
-	public void Initialise(World inWorld)
+	private void OnMouseDown()
+	{
+		if (storyteller.IsInteractive)
+			showWork = !showWork;
+		else
+			showWork = false;
+	}
+
+	public void HideActions()
+	{
+		showWork = false;
+	}
+
+	public void Initialise(World inWorld, Storyteller inStoryteller)
 	{
 		world = inWorld;
+		storyteller = inStoryteller;
 	}
 
 	public void GoTo(Room room, Action inTargetReached)
