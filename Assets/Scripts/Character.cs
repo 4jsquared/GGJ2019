@@ -59,7 +59,7 @@ public class Character : MonoBehaviour
 	// Sprite cloud renderers
 	private SpriteRenderer emoteSprite;
 	private GameObject actionSpriteRoot;
-	private List<GameObject> actionSpriteCloud;
+	private List<OptionsAction> actionSpriteCloud;
 
 
 
@@ -87,7 +87,7 @@ public class Character : MonoBehaviour
 		actionSpriteRoot.transform.localPosition = new Vector2(0, 0);
 		actionSpriteRoot.SetActive(false);
 
-		actionSpriteCloud = new List<GameObject>();
+		actionSpriteCloud = new List<OptionsAction>();
 	}
 
 	public void Initialise(IEnumerable<StoryAction> inActions)
@@ -98,6 +98,11 @@ public class Character : MonoBehaviour
 	private void OnMouseDown()
 	{
 		showActions = !showActions;
+	}
+
+	public void HideActions()
+	{
+		showActions = false;
 	}
 
 	// Update is called once per frame
@@ -143,6 +148,7 @@ public class Character : MonoBehaviour
 			for (int i = 0; i < actionSpriteCloud.Count; i++)
 			{
 				actionSpriteCloud[i].GetComponent<SpriteRenderer>().sprite = GetSpriteForAction(actions[i].GetActionDescription());
+				actionSpriteCloud[i].action = actions[i];
 			}
 
 			// Activate
@@ -154,18 +160,26 @@ public class Character : MonoBehaviour
 		}
     }
 
-	private GameObject CreateActionSprite()
+	private OptionsAction CreateActionSprite()
 	{
 		GameObject actionObject = new GameObject(name + " Action");
 
 		actionObject.AddComponent<SpriteRenderer>();
-		actionObject.AddComponent<BoxCollider2D>();
-
+		actionObject.AddComponent<CircleCollider2D>();
+		actionObject.AddComponent<OptionsAction>();
+		
 		actionObject.transform.parent = actionSpriteRoot.transform; // Relative to root
 		actionObject.transform.localScale = new Vector2(spriteScale, spriteScale);
 		actionObject.GetComponent<SpriteRenderer>().sortingLayerName = "WorldUI"; // Make sure this renders in the UI layer
 
-		return actionObject;
+		CircleCollider2D collider = actionObject.GetComponent<CircleCollider2D>();
+		collider.isTrigger = true;
+		collider.radius = spriteScale;
+		
+		OptionsAction optionsAction = actionObject.GetComponent<OptionsAction>();
+		optionsAction.character = this;
+
+		return optionsAction;
 	}
 
 	private Sprite GetSpriteForAction(ActionSprites actionSprite)
