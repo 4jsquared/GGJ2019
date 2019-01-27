@@ -45,6 +45,12 @@ public class Storyteller : MonoBehaviour
 	{
 		runningTriggeredEvents = new List<StoryEvent>();
 
+		// Initialise Events
+		foreach (StoryEvent e in onTriggerEvents)
+			e.Initialise(this, world, player);
+		foreach (StoryEvent e in randomEvents)
+			e.Initialise(this, world, player);
+
 		// Initialise actions
 		foreach (StoryAction action in actions)
 			action.Initialise(this, world, player);

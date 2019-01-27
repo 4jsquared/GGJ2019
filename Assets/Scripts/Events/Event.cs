@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class StoryEvent : MonoBehaviour {
+public abstract class StoryEvent : MonoBehaviour
+{
+	protected Player player;
+	protected World world;
+	protected Storyteller storyteller;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public void Initialise(Storyteller inStoryteller, World inWorld, Player inPlayer)
+	{
+		player = inPlayer;
+		world = inWorld;
+		storyteller = inStoryteller;
 	}
 
 	// Can we start this event?

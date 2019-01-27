@@ -30,7 +30,7 @@ public class TimedEvent : StoryEvent
 	{
 		if (Time.time < EndTime)
 		{
-			// Event still in progress, nothing to do here
+			// Event still in progress
 			return true;
 		}
 		else
@@ -45,13 +45,8 @@ public class TimedEvent : StoryEvent
 		}
 	}
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	protected void CancelEvent()
+	{
+		EndTime = 0;
 	}
 }

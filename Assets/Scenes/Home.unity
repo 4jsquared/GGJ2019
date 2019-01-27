@@ -1720,7 +1720,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2742823, y: -0.1655458, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1698583428}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3556,7 +3557,8 @@ MonoBehaviour:
   - {fileID: 1710355038}
   clockMultiplierSlow: 1
   clockMultiplierFast: 20
-  onTriggerEvents: []
+  onTriggerEvents:
+  - {fileID: 1698583429}
   randomEvents: []
   randomEventInterval: 0
   actions:
@@ -4704,6 +4706,57 @@ RectTransform:
   m_AnchoredPosition: {x: 0.013, y: 0}
   m_SizeDelta: {x: 142.183, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1698583427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1698583428}
+  - component: {fileID: 1698583429}
+  m_Layer: 0
+  m_Name: WomanBirthday
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1698583428
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1698583427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 609334594}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1698583429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1698583427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bcc15d6c606b349871a35502738f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShouldRepeat: 0
+  StartTime: 0
+  Duration: 0
+  RepeatAfterDuration: 0
+  character: {fileID: 2032492496}
+  visualOnlyCharacters: []
+  health: 0
+  happiness: 0
+  social: 0
+  time: 1
+  money: 0
 --- !u!1 &1710355037
 GameObject:
   m_ObjectHideFlags: 0
