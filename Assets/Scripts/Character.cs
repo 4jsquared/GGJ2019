@@ -63,6 +63,8 @@ public class Character : MonoBehaviour
 	private GameObject actionSpriteRoot;
 	private List<OptionsAction> actionSpriteCloud;
 
+	private Storyteller storyteller;
+
 
 
 	// Use this for initialization
@@ -92,14 +94,18 @@ public class Character : MonoBehaviour
 		actionSpriteCloud = new List<OptionsAction>();
 	}
 
-	public void Initialise(IEnumerable<StoryAction> inActions)
+	public void Initialise(Storyteller inStoryteller, IEnumerable<StoryAction> inActions)
 	{
+		storyteller = inStoryteller;
 		characterActions = inActions;
 	}
 
 	private void OnMouseDown()
 	{
-		showActions = !showActions;
+		if (storyteller.IsInteractive)
+			showActions = !showActions;
+		else
+			showActions = false;
 	}
 
 	public void HideActions()
@@ -119,7 +125,7 @@ public class Character : MonoBehaviour
         DisplayIconOfLowestStatistics();
 
 		// Calculate actions
-		if (showActions)
+		if (showActions && storyteller.IsInteractive)
 		{
 			StoryAction[] actions = GetAvailableActions().ToArray();
 
