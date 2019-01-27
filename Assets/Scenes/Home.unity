@@ -593,31 +593,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   room: {fileID: 858370915}
   health:
-    value: 100
+    value: 60
     minimum: 0
     maximum: 100
-    changePerSecond: 5
+    changePerSecond: -3
   happiness:
-    value: 100
+    value: 50
     minimum: 0
     maximum: 100
-    changePerSecond: 5
+    changePerSecond: -3
   social:
-    value: 100
+    value: 80
     minimum: 0
     maximum: 100
-    changePerSecond: 5
-  healthThreshHoldValue: 0
-  happinessThreasholdValue: 0
-  socialThresholdValue: 0
+    changePerSecond: -3
+  healthThreshHoldValue: 60
+  happinessThreasholdValue: 60
+  socialThresholdValue: 60
   healthBubble: {fileID: 21300000, guid: 939668c5181389048819e53bb9fa646c, type: 3}
   happinessBubble: {fileID: 21300000, guid: 48255264da368284fbc474096fccd1f3, type: 3}
   socialBubble: {fileID: 21300000, guid: a1c4498bd23ae95438f225f60783f9e1, type: 3}
   healthEmote: {fileID: 21300000, guid: 6c265be33e1fca54285b5e0eec9c2be3, type: 3}
   happinessEmote: {fileID: 21300000, guid: 5f870b275f8ac484d8fcd3c229a73865, type: 3}
   socialEmote: {fileID: 21300000, guid: 088930d486f2ef7488bcf07bcdcf4293, type: 3}
-  spriteScale: 1
-  spriteOffset: 1
+  spriteScale: 0.5
+  spriteOffset: 1.5
   showActions: 0
 --- !u!212 &144202244
 SpriteRenderer:
@@ -1152,59 +1152,6 @@ Transform:
   m_Father: {fileID: 781738484}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &331884509
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 331884510}
-  - component: {fileID: 331884511}
-  m_Layer: 0
-  m_Name: TeenBirthday
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &331884510
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 331884509}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 609334594}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &331884511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 331884509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07bcc15d6c606b349871a35502738f3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShouldRepeat: 0
-  StartTime: 10
-  Duration: 24
-  RepeatAfterDuration: 0
-  character: {fileID: 144202243}
-  visualOnlyCharacters:
-  - {fileID: 882484468}
-  - {fileID: 696563275}
-  health: 0
-  happiness: 0
-  social: 0
-  time: 1
-  money: 0
 --- !u!1 &344484816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description: 0
-  time: 8
+  time: 1
   money: 15
   goToRoom: {fileID: 1753623110}
   returnToRoom: {fileID: 455487956}
@@ -1791,8 +1738,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1698583428}
-  - {fileID: 1367034514}
-  - {fileID: 331884510}
+  - {fileID: 1073562918}
+  - {fileID: 1934577364}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2076,27 +2023,27 @@ MonoBehaviour:
     value: 100
     minimum: 0
     maximum: 100
-    changePerSecond: 5
+    changePerSecond: -3
   happiness:
-    value: 10
+    value: 40
     minimum: 0
     maximum: 100
-    changePerSecond: -100
+    changePerSecond: -3
   social:
     value: 100
     minimum: 0
     maximum: 100
-    changePerSecond: 5
-  healthThreshHoldValue: 0
-  happinessThreasholdValue: 20
-  socialThresholdValue: 0
+    changePerSecond: -3
+  healthThreshHoldValue: 80
+  happinessThreasholdValue: 80
+  socialThresholdValue: 80
   healthBubble: {fileID: 21300000, guid: c443f69f0627ae447bfd43e740b5a71a, type: 3}
   happinessBubble: {fileID: 21300000, guid: 0e64b040ff5625c4aa8b71a86bb39f6f, type: 3}
   socialBubble: {fileID: 21300000, guid: 34ce56844722a754e90bd02ed0138d34, type: 3}
   healthEmote: {fileID: 21300000, guid: 07027e9bb828a4e4ea9c9f1abff948ad, type: 3}
   happinessEmote: {fileID: 21300000, guid: 4ef9a5ea62b4d624d88f8a33d0facfdc, type: 3}
   socialEmote: {fileID: 21300000, guid: 3249de712c9a7064db6a858ccc91773c, type: 3}
-  spriteScale: 1
+  spriteScale: 0.5
   spriteOffset: 1
   showActions: 0
 --- !u!212 &696563274
@@ -2203,9 +2150,11 @@ MonoBehaviour:
   - {fileID: 2032492496}
   - {fileID: 144202243}
   - {fileID: 1622149257}
+  - {fileID: 882484469}
+  - {fileID: 696563273}
   health: 5
   happiness: 5
-  social: 10
+  social: 20
   time: 1
   realTime: 1
   money: 0
@@ -2253,10 +2202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea5308d3bc77ec4fb26583a863a5936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 10000
+  money: 100
   root: {fileID: 731062910}
   targetRoom: {fileID: 1298740076}
-  moveSpeed: 4
+  moveSpeed: 10
   workBubble: {fileID: 351867725}
 --- !u!61 &731062909
 BoxCollider2D:
@@ -2497,7 +2446,7 @@ MonoBehaviour:
   - {fileID: 88335381}
   - {fileID: 1404000809}
   - {fileID: 266280055}
-  moneyMax: 100
+  moneyMax: 150
   player: {fileID: 731062908}
 --- !u!4 &781738484
 Transform:
@@ -2748,23 +2697,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   room: {fileID: 1298740076}
   health:
-    value: 50
+    value: 100
     minimum: 0
     maximum: 100
-    changePerSecond: 5
+    changePerSecond: -3
   happiness:
-    value: 50
+    value: 100
     minimum: 0
     maximum: 100
-    changePerSecond: 5
+    changePerSecond: -3
   social:
-    value: 50
+    value: 100
     minimum: 0
     maximum: 100
-    changePerSecond: 5
-  healthThreshHoldValue: 20
-  happinessThreasholdValue: 10
-  socialThresholdValue: 10
+    changePerSecond: -3
+  healthThreshHoldValue: 80
+  happinessThreasholdValue: 80
+  socialThresholdValue: 80
   healthBubble: {fileID: 21300000, guid: f9468c5407574894f9cc68671020f807, type: 3}
   happinessBubble: {fileID: 21300000, guid: ca380a0c9662efb40a7d13218dd427c7, type: 3}
   socialBubble: {fileID: 21300000, guid: ca42c84d2a981184dbff66efc87d7f72, type: 3}
@@ -3387,6 +3336,59 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1050680195}
+--- !u!1 &1073562917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1073562918}
+  - component: {fileID: 1073562919}
+  m_Layer: 0
+  m_Name: ChildBirthday
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1073562918
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1073562917}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 609334594}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1073562919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1073562917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bcc15d6c606b349871a35502738f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShouldRepeat: 0
+  StartTime: 1440
+  Duration: 24
+  RepeatAfterDuration: 0
+  character: {fileID: 2032492496}
+  visualOnlyCharacters:
+  - {fileID: 882484468}
+  - {fileID: 696563275}
+  health: 5
+  happiness: 50
+  social: 50
+  time: 24
+  money: -10
 --- !u!1 &1081960524
 GameObject:
   m_ObjectHideFlags: 0
@@ -3663,8 +3665,8 @@ MonoBehaviour:
   realTimeToGameTimeMultiplier: 0.1
   onTriggerEvents:
   - {fileID: 1698583429}
-  - {fileID: 1367034515}
-  - {fileID: 331884511}
+  - {fileID: 1073562919}
+  - {fileID: 1934577365}
   randomEvents: []
   randomEventInterval: 0
   actions:
@@ -3678,7 +3680,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1240319071}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d33750d7df8d6b4cb82744c1d6c49a0, type: 3}
   m_Name: 
@@ -3690,7 +3692,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1240319071}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98b11ab9495d6f74bb726f5e029fb6d3, type: 3}
   m_Name: 
@@ -3905,59 +3907,6 @@ Transform:
   m_Father: {fileID: 790573032}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1367034513
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1367034514}
-  - component: {fileID: 1367034515}
-  m_Layer: 0
-  m_Name: ChildBirthday
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1367034514
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1367034513}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 609334594}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1367034515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1367034513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07bcc15d6c606b349871a35502738f3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShouldRepeat: 0
-  StartTime: 10
-  Duration: 24
-  RepeatAfterDuration: 0
-  character: {fileID: 1622149257}
-  visualOnlyCharacters:
-  - {fileID: 882484468}
-  - {fileID: 696563275}
-  health: 0
-  happiness: 0
-  social: 0
-  time: 1
-  money: 0
 --- !u!1 &1368749207
 GameObject:
   m_ObjectHideFlags: 0
@@ -4371,6 +4320,8 @@ MonoBehaviour:
   - {fileID: 1622149257}
   - {fileID: 882484469}
   - {fileID: 696563273}
+  - {fileID: 2032492496}
+  - {fileID: 144202243}
   health: 5
   happiness: 20
   social: 5
@@ -4632,28 +4583,28 @@ MonoBehaviour:
     value: 100
     minimum: 0
     maximum: 100
-    changePerSecond: 5
+    changePerSecond: -3
   happiness:
     value: 100
     minimum: 0
     maximum: 100
-    changePerSecond: 5
+    changePerSecond: -3
   social:
     value: 100
     minimum: 0
     maximum: 100
-    changePerSecond: 5
-  healthThreshHoldValue: 0
-  happinessThreasholdValue: 0
-  socialThresholdValue: 0
+    changePerSecond: -3
+  healthThreshHoldValue: 60
+  happinessThreasholdValue: 60
+  socialThresholdValue: 60
   healthBubble: {fileID: 21300000, guid: 736dd5237fbac5d48baf47116f14ff63, type: 3}
   happinessBubble: {fileID: 21300000, guid: f05e0a31ba70c6147bb6b544c10fcd19, type: 3}
   socialBubble: {fileID: 21300000, guid: 2ec8ef25f8ecf8641ba62769d9d1d94d, type: 3}
   healthEmote: {fileID: 21300000, guid: 198b58df6aa3ec645b035dde2f3eacdd, type: 3}
   happinessEmote: {fileID: 21300000, guid: c97012655f33d734c85cfbd1db2dacd0, type: 3}
   socialEmote: {fileID: 21300000, guid: 5ba337b2975caff48841cb24b4c5f5fb, type: 3}
-  spriteScale: 1
-  spriteOffset: 1
+  spriteScale: 0.5
+  spriteOffset: 1.5
   showActions: 0
 --- !u!212 &1622149258
 SpriteRenderer:
@@ -4922,18 +4873,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShouldRepeat: 0
-  StartTime: 10
+  StartTime: 7200
   Duration: 24
   RepeatAfterDuration: 0
   character: {fileID: 2032492496}
   visualOnlyCharacters:
   - {fileID: 882484468}
   - {fileID: 696563275}
-  health: 0
-  happiness: 0
-  social: 0
-  time: 1
-  money: 0
+  health: 5
+  happiness: 50
+  social: 50
+  time: 24
+  money: -10
 --- !u!1 &1710355037
 GameObject:
   m_ObjectHideFlags: 0
@@ -5324,6 +5275,59 @@ Transform:
   m_Father: {fileID: 790573032}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1934577363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1934577364}
+  - component: {fileID: 1934577365}
+  m_Layer: 0
+  m_Name: TeenBirthday
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1934577364
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1934577363}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 609334594}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1934577365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1934577363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07bcc15d6c606b349871a35502738f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShouldRepeat: 0
+  StartTime: 5760
+  Duration: 24
+  RepeatAfterDuration: 0
+  character: {fileID: 2032492496}
+  visualOnlyCharacters:
+  - {fileID: 882484468}
+  - {fileID: 696563275}
+  health: 5
+  happiness: 50
+  social: 50
+  time: 24
+  money: -10
 --- !u!1 &1940033024
 GameObject:
   m_ObjectHideFlags: 0
@@ -5333,6 +5337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1940033025}
   - component: {fileID: 1940033026}
+  - component: {fileID: 1940033027}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -5388,16 +5393,33 @@ SpriteRenderer:
   m_SortingLayerID: -1274844869
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ba579f9a700d4b24a840f8afde934698, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5865683c11e5d1c42b4cc144882c226a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.15, y: 2.57}
+  m_Size: {x: 1.28, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &1940033027
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1940033024}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cada19104045c7d4b9ea73144e926d94, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1998596018
 GameObject:
   m_ObjectHideFlags: 0
@@ -5586,31 +5608,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   room: {fileID: 1191097270}
   health:
-    value: 100
+    value: 90
     minimum: 0
     maximum: 100
-    changePerSecond: 5
+    changePerSecond: -3
   happiness:
-    value: 100
+    value: 80
     minimum: 0
     maximum: 100
-    changePerSecond: 5
+    changePerSecond: -3
   social:
-    value: 100
+    value: 90
     minimum: 0
     maximum: 100
-    changePerSecond: 5
-  healthThreshHoldValue: 0
-  happinessThreasholdValue: 0
-  socialThresholdValue: 0
+    changePerSecond: -3
+  healthThreshHoldValue: 60
+  happinessThreasholdValue: 60
+  socialThresholdValue: 60
   healthBubble: {fileID: 21300000, guid: 980e5be064578d6429d5e0980adb5eda, type: 3}
   happinessBubble: {fileID: 21300000, guid: d52f104bd2d551b4499335fb1a2fd30b, type: 3}
   socialBubble: {fileID: 21300000, guid: a375229b82d72f54dbbe96f33cf05373, type: 3}
   healthEmote: {fileID: 21300000, guid: 6ffae6f68d581c6458acf7677f7ece42, type: 3}
   happinessEmote: {fileID: 21300000, guid: 84db016cd324dbd40ba89d74ad7c3e9b, type: 3}
   socialEmote: {fileID: 21300000, guid: 278c2f36c2b2e0046a612f0f57990043, type: 3}
-  spriteScale: 1
-  spriteOffset: 1
+  spriteScale: 0.5
+  spriteOffset: 1.5
   showActions: 0
 --- !u!212 &2032492497
 SpriteRenderer:
