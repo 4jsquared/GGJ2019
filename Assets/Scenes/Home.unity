@@ -3377,8 +3377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShouldRepeat: 0
-  StartTime: 1440
-  Duration: 24
+  StartTime: 72
+  Duration: 2
   RepeatAfterDuration: 0
   character: {fileID: 2032492496}
   visualOnlyCharacters:
@@ -4873,8 +4873,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShouldRepeat: 0
-  StartTime: 7200
-  Duration: 24
+  StartTime: 360
+  Duration: 2
   RepeatAfterDuration: 0
   character: {fileID: 2032492496}
   visualOnlyCharacters:
@@ -5316,8 +5316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShouldRepeat: 0
-  StartTime: 5760
-  Duration: 24
+  StartTime: 28
+  Duration: 2
   RepeatAfterDuration: 0
   character: {fileID: 2032492496}
   visualOnlyCharacters:
