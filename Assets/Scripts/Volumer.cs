@@ -40,7 +40,7 @@ public class Volumer : MonoBehaviour
 
 		if (backgroundTarget <= Mathf.Epsilon)
 		{
-			playerAudio.volume = Mathf.Clamp01(sadAudio.volume + .1f);
+			playerAudio.volume = Mathf.Clamp01(playerAudio.volume - .1f);
 			sadAudio.volume = Mathf.Clamp01(sadAudio.volume + .1f);
         }
 
