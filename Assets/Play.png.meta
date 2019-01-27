@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b2833571c3e05ba408d16dfa24edd714
 timeCreated: 1548582795
 licenseType: Free
@@ -6,6 +7,13 @@ TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 4
+=======
+guid: 6da637dff311e1944b0a2f1ceb242e4f
+TextureImporter:
+  fileIDToRecycleName: {}
+  externalObjects: {}
+  serializedVersion: 7
+>>>>>>> ab7255853648e569516a888f2275dc00f8c90f5e
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -23,6 +31,11 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+<<<<<<< HEAD
+=======
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+>>>>>>> ab7255853648e569516a888f2275dc00f8c90f5e
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -33,7 +46,11 @@ TextureImporter:
     serializedVersion: 2
     filterMode: -1
     aniso: -1
+<<<<<<< HEAD
     mipBias: -1
+=======
+    mipBias: -100
+>>>>>>> ab7255853648e569516a888f2275dc00f8c90f5e
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -45,18 +62,33 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
+=======
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+>>>>>>> ab7255853648e569516a888f2275dc00f8c90f5e
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+<<<<<<< HEAD
+=======
+  singleChannelComponent: 0
+>>>>>>> ab7255853648e569516a888f2275dc00f8c90f5e
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
+<<<<<<< HEAD
   - buildTarget: DefaultTexturePlatform
+=======
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+>>>>>>> ab7255853648e569516a888f2275dc00f8c90f5e
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -65,12 +97,28 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+<<<<<<< HEAD
+=======
+    androidETC2FallbackOverride: 0
+>>>>>>> ab7255853648e569516a888f2275dc00f8c90f5e
   spriteSheet:
     serializedVersion: 2
     sprites: []
     outline: []
     physicsShape: []
+<<<<<<< HEAD
   spritePackingTag: 
+=======
+    bones: []
+    spriteID: fb37d67fc8a681348a9ae691dd611fa2
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+>>>>>>> ab7255853648e569516a888f2275dc00f8c90f5e
   userData: 
   assetBundleName: 
   assetBundleVariant: 
