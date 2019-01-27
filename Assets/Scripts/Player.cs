@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
 	
 	private Queue<GameObject> route;
 	private Vector2 nextTarget;
+	private Action targetReached;
 	private World world;
 
 	// Use this for initialization
@@ -70,6 +72,17 @@ public class Player : MonoBehaviour
 		}
 
 		root.MovePosition(endPosition);
+
+		if (remainingDistance > 0)
+		{
+			// We had distance we could have gone but didn't
+			// Must have reached our destination
+			if (targetReached != null)
+			{
+				targetReached();
+				targetReached = null;
+			}
+		}
 	}
 
 	public void Initialise(World inWorld)
@@ -77,7 +90,7 @@ public class Player : MonoBehaviour
 		world = inWorld;
 	}
 
-	public void GoTo(Room room)
+	public void GoTo(Room room, Action inTargetReached)
 	{
 		// Generate a route from our current target (probably where we are) to our target
 		IEnumerable<GameObject> nextRoute = world.GetRoute(targetRoom, room);
@@ -86,5 +99,6 @@ public class Player : MonoBehaviour
 
 		// Set our new target
 		targetRoom = room;
+		targetReached = inTargetReached;
 	}
 }

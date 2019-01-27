@@ -4,21 +4,48 @@ using UnityEngine;
 
 public abstract class StoryAction : MonoBehaviour
 {
+	public enum State
+	{
+		kInactive,
+		kTransitionIn,
+		kAct,
+		kTransitionOut
+	}
+
 	[SerializeField] private Character.ActionSprites description;
+
+	protected State state;
 
 	protected World world;
 	protected Player player;
+	private Storyteller storyteller;
 
-	public void Initialise(World inWorld, Player inPlayer)
+	public void Start()
+	{
+		state = State.kInactive;
+	}
+
+	public void Initialise(Storyteller inStoryteller, World inWorld, Player inPlayer)
 	{
 		world = inWorld;
 		player = inPlayer;
+		storyteller = inStoryteller;
 	}
 
 	// How should we describe this action
 	public Character.ActionSprites GetActionDescription()
 	{
 		return description;
+	}
+
+	public State GetState()
+	{
+		return state;
+	}
+
+	public void Trigger(Character inCharacter)
+	{
+		storyteller.TriggerAction(this, inCharacter);
 	}
 
 	// Does this action primarily affect this character.
@@ -32,5 +59,6 @@ public abstract class StoryAction : MonoBehaviour
 	public abstract bool IsAvailable();
 
 	// Actually do the action - pass in the selected character if need be.
-	public abstract void DoAction(Character inCharacter);
+	public abstract void StartAction(Character inCharacter);
+	public abstract void UpdateAction();
 }

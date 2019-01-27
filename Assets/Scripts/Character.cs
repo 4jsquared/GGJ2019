@@ -14,6 +14,8 @@ public class Character : MonoBehaviour
 		kSocial,
 	};
 
+	public Room room;
+
 	// General well being
 	public Statistic health;
 	public Statistic happiness;

@@ -16,21 +16,46 @@ public class SingleCharacterAction : StoryAction
 
 	[SerializeField] private float money;
 
-	public override void DoAction(Character inCharacter)
+	private Character selectedCharacter;
+
+	public override void StartAction(Character inCharacter)
 	{
 		if (!applicableCharacters.Contains(inCharacter))
 			throw new InvalidOperationException("Tried to apply action with invalid selected character");
 
-		// Do character effects
-		inCharacter.health.Increment(health);
-		inCharacter.happiness.Increment(happiness);
-		inCharacter.social.Increment(social);
+		selectedCharacter = inCharacter;
+		state = State.kTransitionIn;
 
-		// Cost money
-		player.money -= money;
+		// Move to target character's room
+		player.GoTo(selectedCharacter.room, () =>
+		{
+			// When they get there, transistion to acting state
+			state = State.kAct;
+		});
+	}
 
-		// Increment time
-		world.time += time;
+
+	public override void UpdateAction()
+	{
+		if (state == State.kAct)
+		{
+			// TODO span this out over the actions visual time
+
+			// Do character effects
+			selectedCharacter.health.Increment(health);
+			selectedCharacter.happiness.Increment(happiness);
+			selectedCharacter.social.Increment(social);
+
+			// Cost money
+			player.money -= money;
+
+			// Increment time
+			world.time += time;
+
+			// Tidy up and end
+			selectedCharacter = null;
+			state = State.kInactive;
+		}
 	}
 
 	public override bool IsAvailable()

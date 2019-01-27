@@ -10,16 +10,16 @@ public class _Tester : MonoBehaviour
 	void Update ()
 	{
 		if (Input.GetKeyDown(KeyCode.Alpha0))
-			storyteller.player.GoTo(storyteller.world.rooms[0]);
+			storyteller.player.GoTo(storyteller.world.rooms[0], () => { });
 		if (Input.GetKeyDown(KeyCode.Alpha1))
-			storyteller.player.GoTo(storyteller.world.rooms[1]);
+			storyteller.player.GoTo(storyteller.world.rooms[1], () => { });
 		if (Input.GetKeyDown(KeyCode.Alpha2))
-			storyteller.player.GoTo(storyteller.world.rooms[2]);
+			storyteller.player.GoTo(storyteller.world.rooms[2], () => { });
 		if (Input.GetKeyDown(KeyCode.Alpha3))
-			storyteller.player.GoTo(storyteller.world.rooms[3]);
+			storyteller.player.GoTo(storyteller.world.rooms[3], () => { });
 		if (Input.GetKeyDown(KeyCode.Alpha4))
-			storyteller.player.GoTo(storyteller.world.rooms[4]);
+			storyteller.player.GoTo(storyteller.world.rooms[4], () => { });
 		if (Input.GetKeyDown(KeyCode.Alpha5))
-			storyteller.player.GoTo(storyteller.world.rooms[5]);
+			storyteller.player.GoTo(storyteller.world.rooms[5], () => { });
 	}
 }

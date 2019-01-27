@@ -8,16 +8,26 @@ public class PlayerAction : StoryAction
 	[SerializeField] private float time;
 	[SerializeField] private float money;
 
-	public override void DoAction(Character inCharacter)
+	[SerializeField] private Room room;
+
+	public override void StartAction(Character inCharacter)
 	{
 		if (inCharacter != null)
 			throw new InvalidOperationException("Tried to apply player action with character");
 
-		// Cost money
-		player.money -= money;
+		state = State.kAct;
+	}
 
-		// Increment time
-		world.time += time;
+	public override void UpdateAction()
+	{
+		if (false)
+		{
+			// Cost money
+			player.money -= money;
+
+			// Increment time
+			world.time += time;
+		}
 	}
 
 	public override bool IsAvailable()

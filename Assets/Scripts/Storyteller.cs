@@ -22,11 +22,16 @@ public class Storyteller : MonoBehaviour
 	public List<StoryAction> actions;
 
 
+	// Are interactions available
+	public bool IsInteractive { get; private set; }
+
+
 	// Internal tracking
 	private float elapsedTime;
 
 	private List<StoryEvent> runningTriggeredEvents;
 	private StoryEvent runningRandomEvent;
+	private StoryAction runningAction;
 
 	private float accumulatedRandomEventTime;
 
@@ -38,7 +43,7 @@ public class Storyteller : MonoBehaviour
 
 		// Initialise actions
 		foreach (StoryAction action in actions)
-			action.Initialise(world, player);
+			action.Initialise(this, world, player);
 
 		// Intialise characters
 		foreach (Character c in characters)
@@ -46,6 +51,8 @@ public class Storyteller : MonoBehaviour
 
 		// Initialise player
 		player.Initialise(world);
+
+		IsInteractive = true;
 	}
 	
 	// Update is called once per frame
@@ -121,6 +128,42 @@ public class Storyteller : MonoBehaviour
 				// And start it
 				runningRandomEvent.StartEvent();
 			}
+		}
+
+		// Update the action state
+		if (runningAction != null)
+		{
+			runningAction.UpdateAction();
+			switch (runningAction.GetState())
+			{
+				case StoryAction.State.kInactive:
+					// Finished, remove
+					runningAction = null;
+					IsInteractive = true;
+					break;
+				case StoryAction.State.kTransitionIn:
+					// Starting, but needs transition period
+					break;
+				case StoryAction.State.kAct:
+					// Acting
+					// TODO adjust time rate
+					break;
+				case StoryAction.State.kTransitionOut:
+					// Action finished, returning to normal
+					// TODO adjust time rate back
+					break;
+			}
+		}
+	}
+
+
+	public void TriggerAction(StoryAction inAction, Character inCharacter)
+	{
+		if (runningAction == null)
+		{
+			runningAction = inAction;
+			runningAction.StartAction(inCharacter);
+			IsInteractive = false;
 		}
 	}
 }

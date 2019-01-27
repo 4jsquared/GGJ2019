@@ -9,6 +9,7 @@ public class OptionsAction : MonoBehaviour
 
 	private void OnMouseDown()
 	{
+		action.Trigger(character);
 		character.HideActions();
 	}
 }
