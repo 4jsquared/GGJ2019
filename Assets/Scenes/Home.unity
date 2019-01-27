@@ -763,6 +763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinSpeed: 100
+  speedMultiplier: 0
 --- !u!4 &173846265
 Transform:
   m_ObjectHideFlags: 0
@@ -1846,6 +1847,7 @@ MonoBehaviour:
   happiness: 5
   social: 10
   time: 1
+  realTime: 1
   money: 0
 --- !u!1 &731062906
 GameObject:
@@ -1894,6 +1896,7 @@ MonoBehaviour:
   root: {fileID: 731062910}
   targetRoom: {fileID: 1298740076}
   moveSpeed: 4
+  workBubble: {fileID: 0}
 --- !u!50 &731062910
 Rigidbody2D:
   serializedVersion: 4
@@ -3243,6 +3246,11 @@ MonoBehaviour:
   - {fileID: 1622149257}
   - {fileID: 882484469}
   - {fileID: 696563273}
+  clocks:
+  - {fileID: 173846264}
+  - {fileID: 1710355038}
+  clockMultiplierSlow: 1
+  clockMultiplierFast: 20
   onTriggerEvents: []
   randomEvents: []
   randomEventInterval: 0
@@ -3454,6 +3462,7 @@ MonoBehaviour:
   happiness: 5
   social: 5
   time: 1
+  realTime: 1
   money: -10
 --- !u!1 &1353999409
 GameObject:
@@ -3900,6 +3909,7 @@ MonoBehaviour:
   happiness: 20
   social: 5
   time: 1
+  realTime: 1
   money: -5
 --- !u!1 &1589680120
 GameObject:
@@ -4389,6 +4399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinSpeed: 12
+  speedMultiplier: 0
 --- !u!4 &1710355039
 Transform:
   m_ObjectHideFlags: 0

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ClockSpinner : MonoBehaviour {
 
-    public float spinSpeed;
-    private bool timeToMove = true;
+    [SerializeField] private float spinSpeed;
+	public float speedMultiplier;
 
 	// Use this for initialization
 	void Start () {
@@ -15,9 +15,6 @@ public class ClockSpinner : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (timeToMove == true)
-        {
-            transform.Rotate(0, 0, spinSpeed * -Time.deltaTime);
-        }
+        transform.Rotate(0, 0, speedMultiplier * spinSpeed * -Time.deltaTime);
     }
 }

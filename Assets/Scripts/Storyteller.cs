@@ -10,6 +10,10 @@ public class Storyteller : MonoBehaviour
 	public Player player;
 	public Character[] characters;
 
+	public ClockSpinner[] clocks;
+	[SerializeField] private float clockMultiplierSlow = 1;
+	[SerializeField] private float clockMultiplierFast = 2;
+
 
 	// Events
 	public List<StoryEvent> onTriggerEvents;
@@ -51,6 +55,10 @@ public class Storyteller : MonoBehaviour
 
 		// Initialise player
 		player.Initialise(world);
+
+		// Initialise clocks
+		foreach (ClockSpinner clock in clocks)
+			clock.speedMultiplier = clockMultiplierSlow;
 
 		IsInteractive = true;
 	}
@@ -140,17 +148,23 @@ public class Storyteller : MonoBehaviour
 					// Finished, remove
 					runningAction = null;
 					IsInteractive = true;
+
+					// Can skip transition out state, so make sure to reset clocks too.
+					foreach (ClockSpinner clock in clocks)
+						clock.speedMultiplier = clockMultiplierSlow;
 					break;
 				case StoryAction.State.kTransitionIn:
 					// Starting, but needs transition period
 					break;
 				case StoryAction.State.kAct:
 					// Acting
-					// TODO adjust time rate
+					foreach (ClockSpinner clock in clocks)
+						clock.speedMultiplier = clockMultiplierFast;
 					break;
 				case StoryAction.State.kTransitionOut:
 					// Action finished, returning to normal
-					// TODO adjust time rate back
+					foreach (ClockSpinner clock in clocks)
+						clock.speedMultiplier = clockMultiplierSlow;
 					break;
 			}
 		}

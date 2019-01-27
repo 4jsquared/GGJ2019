@@ -12,11 +12,13 @@ public class SingleCharacterAction : StoryAction
 	[SerializeField] private float happiness;
 	[SerializeField] private float social;
 
-	[SerializeField] private float time;
+	[SerializeField] private float time = 1;
+	[SerializeField] private float realTime = 1;
 
 	[SerializeField] private float money;
 
 	private Character selectedCharacter;
+	private float remainingTime;
 
 	public override void StartAction(Character inCharacter)
 	{
@@ -24,6 +26,7 @@ public class SingleCharacterAction : StoryAction
 			throw new InvalidOperationException("Tried to apply action with invalid selected character");
 
 		selectedCharacter = inCharacter;
+		remainingTime = realTime;
 		state = State.kTransitionIn;
 
 		// Move to target character's room
@@ -39,22 +42,30 @@ public class SingleCharacterAction : StoryAction
 	{
 		if (state == State.kAct)
 		{
-			// TODO span this out over the actions visual time
+			float timeThisUpdate = Mathf.Clamp(Time.deltaTime, 0, remainingTime);
+			float fraction = (timeThisUpdate / realTime);
 
 			// Do character effects
-			selectedCharacter.health.Increment(health);
-			selectedCharacter.happiness.Increment(happiness);
-			selectedCharacter.social.Increment(social);
+			selectedCharacter.health.Increment(health * fraction);
+			selectedCharacter.happiness.Increment(happiness * fraction);
+			selectedCharacter.social.Increment(social * fraction);
 
 			// Cost money
-			player.money -= money;
+			player.money -= money * fraction;
 
 			// Increment time
-			world.time += time;
+			world.time += time * fraction;
 
-			// Tidy up and end
-			selectedCharacter = null;
-			state = State.kInactive;
+			// Update visual time
+			remainingTime -= timeThisUpdate;
+			if (remainingTime < Mathf.Epsilon)
+			{
+				state = State.kInactive;
+
+				// Tidy up and end
+				selectedCharacter = null;
+				state = State.kInactive;
+			}
 		}
 	}
 

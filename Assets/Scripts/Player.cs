@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
 	private Action targetReached;
 	private World world;
 
+	// Sprites for actions
+	[SerializeField] private GameObject workBubble;
+
 	// Use this for initialization
 	void Start ()
 	{
