@@ -47,15 +47,21 @@ public class Character : MonoBehaviour
     public Sprite[] emoteStatisticsIcons;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+	{
         emoteBubble.gameObject.SetActive(false);
         thresholdList[0] = healthThreshold;
         thresholdList[1] = happinessThreshold;
         thresholdList[2] = socialThreshold;
     }
 
-    // Update is called once per frame
-    void Update() {
+	private void OnMouseDown()
+	{
+		GetComponent<OptionsAppear>().showHidePanel();
+	}
+
+	// Update is called once per frame
+	void Update() {
         lowestThreshold = emptyThreshold;
         CheckHealthThreshHold();
         CheckHappinessThreshHold();
@@ -106,7 +112,7 @@ public class Character : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            Debug.Log("Threshhold in loop:  " + thresholdList[i].name + " value is " + thresholdList[i].value + " past threshold " + thresholdList[i].pastThreshold);
+            // Debug.Log("Threshhold in loop:  " + thresholdList[i].name + " value is " + thresholdList[i].value + " past threshold " + thresholdList[i].pastThreshold);
 
             if (thresholdList[i].pastThreshold == true && thresholdList[i].value > lowestThreshold.value)
             {
