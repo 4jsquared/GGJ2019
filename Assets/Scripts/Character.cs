@@ -166,6 +166,22 @@ public class Character : MonoBehaviour
 		{
 			actionSpriteRoot.SetActive(false);
 		}
+
+		// Calculate fade
+		float fade = Mathf.Clamp01(happiness.Value / happinessThreasholdValue);
+
+		// Fade sprite
+		SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+		Color fadedColor = renderer.color;
+		fadedColor.a = fade;
+		renderer.color = fadedColor;
+
+		// Fade audio
+		GetComponent<AudioSource>().volume = fade;
+
+		// Remove on complete fade
+		if (fade < Mathf.Epsilon)
+			gameObject.SetActive(false);
     }
 
 	private OptionsAction CreateActionSprite()

@@ -2078,17 +2078,17 @@ MonoBehaviour:
     maximum: 100
     changePerSecond: 5
   happiness:
-    value: 100
+    value: 10
     minimum: 0
     maximum: 100
-    changePerSecond: 5
+    changePerSecond: -100
   social:
     value: 100
     minimum: 0
     maximum: 100
     changePerSecond: 5
   healthThreshHoldValue: 0
-  happinessThreasholdValue: 0
+  happinessThreasholdValue: 20
   socialThresholdValue: 0
   healthBubble: {fileID: 21300000, guid: c443f69f0627ae447bfd43e740b5a71a, type: 3}
   happinessBubble: {fileID: 21300000, guid: 0e64b040ff5625c4aa8b71a86bb39f6f, type: 3}
@@ -3660,6 +3660,7 @@ MonoBehaviour:
   - {fileID: 1710355038}
   clockMultiplierSlow: 1
   clockMultiplierFast: 20
+  realTimeToGameTimeMultiplier: 0.1
   onTriggerEvents:
   - {fileID: 1698583429}
   - {fileID: 1367034515}
