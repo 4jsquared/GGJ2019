@@ -356,7 +356,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 144191522}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 239, y: -56.000008, z: 0}
+  m_LocalPosition: {x: -201.90851, y: -390, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2007576412}
@@ -452,15 +452,15 @@ GameObject:
   - component: {fileID: 144202240}
   - component: {fileID: 144202244}
   - component: {fileID: 144202243}
-  - component: {fileID: 144202242}
   - component: {fileID: 144202241}
+  - component: {fileID: 144202242}
   m_Layer: 0
   m_Name: Teen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &144202240
 Transform:
   m_ObjectHideFlags: 0
@@ -468,7 +468,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 144202239}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.12, y: -2.535, z: 0}
+  m_LocalPosition: {x: -3.74, y: 0.78, z: 0}
   m_LocalScale: {x: 0.85627997, y: 0.85627997, z: 0.85627997}
   m_Children: []
   m_Father: {fileID: 1240319072}
@@ -554,26 +554,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!50 &144202242
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!61 &144202242
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 144202239}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 3}
+    newSize: {x: 1.28, y: 2.57}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 3}
+  m_EdgeRadius: 0
 --- !u!114 &144202243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,12 +608,15 @@ MonoBehaviour:
   healthThreshHoldValue: 0
   happinessThreasholdValue: 0
   socialThresholdValue: 0
-  emoteBubble: {fileID: 0}
-  healthBubble: {fileID: 0}
-  happinessBubble: {fileID: 0}
-  socialBubble: {fileID: 0}
-  actionStatisticsIcons: []
-  emoteStatisticsIcons: []
+  healthBubble: {fileID: 21300000, guid: 939668c5181389048819e53bb9fa646c, type: 3}
+  happinessBubble: {fileID: 21300000, guid: 48255264da368284fbc474096fccd1f3, type: 3}
+  socialBubble: {fileID: 21300000, guid: a1c4498bd23ae95438f225f60783f9e1, type: 3}
+  healthEmote: {fileID: 21300000, guid: 6c265be33e1fca54285b5e0eec9c2be3, type: 3}
+  happinessEmote: {fileID: 21300000, guid: 5f870b275f8ac484d8fcd3c229a73865, type: 3}
+  socialEmote: {fileID: 21300000, guid: 088930d486f2ef7488bcf07bcdcf4293, type: 3}
+  spriteScale: 1
+  spriteOffset: 1
+  showActions: 0
 --- !u!212 &144202244
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1093,7 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f11e15c395b42084096550f56ea211bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Work
+  description: 0
   time: 1
   money: 15
 --- !u!1 &382414798
@@ -1578,15 +1586,15 @@ GameObject:
   - component: {fileID: 696563270}
   - component: {fileID: 696563274}
   - component: {fileID: 696563273}
-  - component: {fileID: 696563272}
   - component: {fileID: 696563271}
+  - component: {fileID: 696563272}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &696563270
 Transform:
   m_ObjectHideFlags: 0
@@ -1594,11 +1602,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 696563269}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.25, y: -2.535, z: 0}
+  m_LocalPosition: {x: 0.84, y: -3.54, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1240319072}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &696563271
 AudioSource:
@@ -1680,26 +1688,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!50 &696563272
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!61 &696563272
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 696563269}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.67, y: 2.25}
+    newSize: {x: 1.28, y: 2.57}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.67, y: 2.25}
+  m_EdgeRadius: 0
 --- !u!114 &696563273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1729,12 +1742,15 @@ MonoBehaviour:
   healthThreshHoldValue: 0
   happinessThreasholdValue: 0
   socialThresholdValue: 0
-  emoteBubble: {fileID: 0}
-  healthBubble: {fileID: 0}
-  happinessBubble: {fileID: 0}
-  socialBubble: {fileID: 0}
-  actionStatisticsIcons: []
-  emoteStatisticsIcons: []
+  healthBubble: {fileID: 21300000, guid: c443f69f0627ae447bfd43e740b5a71a, type: 3}
+  happinessBubble: {fileID: 21300000, guid: 0e64b040ff5625c4aa8b71a86bb39f6f, type: 3}
+  socialBubble: {fileID: 21300000, guid: 34ce56844722a754e90bd02ed0138d34, type: 3}
+  healthEmote: {fileID: 21300000, guid: 07027e9bb828a4e4ea9c9f1abff948ad, type: 3}
+  happinessEmote: {fileID: 21300000, guid: 4ef9a5ea62b4d624d88f8a33d0facfdc, type: 3}
+  socialEmote: {fileID: 21300000, guid: 3249de712c9a7064db6a858ccc91773c, type: 3}
+  spriteScale: 1
+  spriteOffset: 1
+  showActions: 0
 --- !u!212 &696563274
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1819,9 +1835,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf67a5d4a13b48845b327df2439d8348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: 2
   applicableCharacters:
   - {fileID: 2032492496}
+  - {fileID: 144202243}
+  - {fileID: 1622149257}
   health: 5
   happiness: 5
   social: 10
@@ -2252,7 +2270,6 @@ GameObject:
   - component: {fileID: 882484469}
   - component: {fileID: 882484467}
   - component: {fileID: 882484471}
-  - component: {fileID: 882484468}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -2267,11 +2284,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 882484465}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.83, y: -2.75, z: 0}
+  m_LocalPosition: {x: -3.73, y: -2.97, z: 0}
   m_LocalScale: {x: 0.85627997, y: 0.85627997, z: 0.85627997}
   m_Children: []
-  m_Father: {fileID: 1998596019}
-  m_RootOrder: 6
+  m_Father: {fileID: 1240319072}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &882484467
 AudioSource:
@@ -2353,18 +2370,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &882484468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 882484465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f3dd5298f2a97243bd8df357964f06c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 1240156646}
 --- !u!114 &882484469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2391,21 +2396,18 @@ MonoBehaviour:
     minimum: 0
     maximum: 100
     changePerSecond: 5
-  healthThreshHoldValue: 0
-  happinessThreasholdValue: 0
-  socialThresholdValue: 0
-  emoteBubble: {fileID: 144191524}
-  healthBubble: {fileID: 995406639}
-  happinessBubble: {fileID: 1050680198}
-  socialBubble: {fileID: 673795439}
-  actionStatisticsIcons:
-  - {fileID: 21300000, guid: ca380a0c9662efb40a7d13218dd427c7, type: 3}
-  - {fileID: 21300000, guid: f9468c5407574894f9cc68671020f807, type: 3}
-  - {fileID: 21300000, guid: ca42c84d2a981184dbff66efc87d7f72, type: 3}
-  emoteStatisticsIcons:
-  - {fileID: 21300000, guid: d0f7398fc472b49448b901a8a0cffbad, type: 3}
-  - {fileID: 21300000, guid: 097478edec164b44ab77bee69da6286a, type: 3}
-  - {fileID: 21300000, guid: 283e173a6b148cc45b947c06a0e447af, type: 3}
+  healthThreshHoldValue: 20
+  happinessThreasholdValue: 10
+  socialThresholdValue: 10
+  healthBubble: {fileID: 21300000, guid: f9468c5407574894f9cc68671020f807, type: 3}
+  happinessBubble: {fileID: 21300000, guid: ca380a0c9662efb40a7d13218dd427c7, type: 3}
+  socialBubble: {fileID: 21300000, guid: ca42c84d2a981184dbff66efc87d7f72, type: 3}
+  healthEmote: {fileID: 21300000, guid: 097478edec164b44ab77bee69da6286a, type: 3}
+  happinessEmote: {fileID: 21300000, guid: d0f7398fc472b49448b901a8a0cffbad, type: 3}
+  socialEmote: {fileID: 21300000, guid: 283e173a6b148cc45b947c06a0e447af, type: 3}
+  spriteScale: 0.5
+  spriteOffset: 1
+  showActions: 0
 --- !u!212 &882484470
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3241,6 +3243,7 @@ Transform:
   - {fileID: 2032492498}
   - {fileID: 144202240}
   - {fileID: 1622149254}
+  - {fileID: 882484466}
   - {fileID: 696563270}
   - {fileID: 1998596019}
   m_Father: {fileID: 0}
@@ -3279,11 +3282,17 @@ MonoBehaviour:
   player: {fileID: 731062908}
   characters:
   - {fileID: 2032492496}
+  - {fileID: 144202243}
+  - {fileID: 1622149257}
+  - {fileID: 882484469}
+  - {fileID: 696563273}
   onTriggerEvents: []
   randomEvents: []
   randomEventInterval: 0
   actions:
   - {fileID: 1349980991}
+  - {fileID: 1537387187}
+  - {fileID: 700877891}
   - {fileID: 357119194}
 --- !u!114 &1240319075
 MonoBehaviour:
@@ -3477,9 +3486,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf67a5d4a13b48845b327df2439d8348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: 0
   applicableCharacters:
   - {fileID: 2032492496}
+  - {fileID: 144202243}
+  - {fileID: 1622149257}
+  - {fileID: 882484469}
+  - {fileID: 696563273}
   health: 20
   happiness: 5
   social: 5
@@ -3921,7 +3934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf67a5d4a13b48845b327df2439d8348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: 
+  description: 1
   applicableCharacters:
   - {fileID: 1622149257}
   - {fileID: 882484469}
@@ -4014,15 +4027,15 @@ GameObject:
   - component: {fileID: 1622149254}
   - component: {fileID: 1622149258}
   - component: {fileID: 1622149257}
-  - component: {fileID: 1622149256}
   - component: {fileID: 1622149255}
+  - component: {fileID: 1622149256}
   m_Layer: 0
   m_Name: Child
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1622149254
 Transform:
   m_ObjectHideFlags: 0
@@ -4030,7 +4043,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1622149253}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.48, y: -2.67, z: 0}
+  m_LocalPosition: {x: 1.82, y: 0.3, z: 0}
   m_LocalScale: {x: 0.85627997, y: 0.85627997, z: 0.85627997}
   m_Children: []
   m_Father: {fileID: 1240319072}
@@ -4116,26 +4129,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!50 &1622149256
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!61 &1622149256
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1622149253}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.01, y: 2.17}
+    newSize: {x: 1.28, y: 2.57}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 2.17}
+  m_EdgeRadius: 0
 --- !u!114 &1622149257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4165,12 +4183,15 @@ MonoBehaviour:
   healthThreshHoldValue: 0
   happinessThreasholdValue: 0
   socialThresholdValue: 0
-  emoteBubble: {fileID: 0}
-  healthBubble: {fileID: 0}
-  happinessBubble: {fileID: 0}
-  socialBubble: {fileID: 0}
-  actionStatisticsIcons: []
-  emoteStatisticsIcons: []
+  healthBubble: {fileID: 21300000, guid: 736dd5237fbac5d48baf47116f14ff63, type: 3}
+  happinessBubble: {fileID: 21300000, guid: f05e0a31ba70c6147bb6b544c10fcd19, type: 3}
+  socialBubble: {fileID: 21300000, guid: 2ec8ef25f8ecf8641ba62769d9d1d94d, type: 3}
+  healthEmote: {fileID: 21300000, guid: 198b58df6aa3ec645b035dde2f3eacdd, type: 3}
+  happinessEmote: {fileID: 21300000, guid: c97012655f33d734c85cfbd1db2dacd0, type: 3}
+  socialEmote: {fileID: 21300000, guid: 5ba337b2975caff48841cb24b4c5f5fb, type: 3}
+  spriteScale: 1
+  spriteOffset: 1
+  showActions: 0
 --- !u!212 &1622149258
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4305,7 +4326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1690837019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4370,7 +4391,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1690837018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 512, y: 384, z: 0}
+  m_LocalPosition: {x: 0.013000488, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 382414799}
@@ -4760,9 +4781,8 @@ Transform:
   - {fileID: 1368749208}
   - {fileID: 1467924043}
   - {fileID: 790573032}
-  - {fileID: 882484466}
   m_Father: {fileID: 1240319072}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1998596020
 SpriteRenderer:
@@ -4892,15 +4912,15 @@ GameObject:
   - component: {fileID: 2032492498}
   - component: {fileID: 2032492497}
   - component: {fileID: 2032492496}
-  - component: {fileID: 2032492499}
   - component: {fileID: 2032492500}
+  - component: {fileID: 2032492499}
   m_Layer: 0
   m_Name: Woman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2032492496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4930,12 +4950,15 @@ MonoBehaviour:
   healthThreshHoldValue: 0
   happinessThreasholdValue: 0
   socialThresholdValue: 0
-  emoteBubble: {fileID: 0}
-  healthBubble: {fileID: 0}
-  happinessBubble: {fileID: 0}
-  socialBubble: {fileID: 0}
-  actionStatisticsIcons: []
-  emoteStatisticsIcons: []
+  healthBubble: {fileID: 21300000, guid: 980e5be064578d6429d5e0980adb5eda, type: 3}
+  happinessBubble: {fileID: 21300000, guid: d52f104bd2d551b4499335fb1a2fd30b, type: 3}
+  socialBubble: {fileID: 21300000, guid: a375229b82d72f54dbbe96f33cf05373, type: 3}
+  healthEmote: {fileID: 21300000, guid: 6ffae6f68d581c6458acf7677f7ece42, type: 3}
+  happinessEmote: {fileID: 21300000, guid: 84db016cd324dbd40ba89d74ad7c3e9b, type: 3}
+  socialEmote: {fileID: 21300000, guid: 278c2f36c2b2e0046a612f0f57990043, type: 3}
+  spriteScale: 1
+  spriteOffset: 1
+  showActions: 0
 --- !u!212 &2032492497
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4987,32 +5010,37 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2032492495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.6, y: -2.535, z: 0}
+  m_LocalPosition: {x: 2.94, y: -3.15, z: 0}
   m_LocalScale: {x: 0.856282, y: 0.856282, z: 0.856282}
   m_Children: []
   m_Father: {fileID: 1240319072}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &2032492499
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!61 &2032492499
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2032492495}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 2.57}
+    newSize: {x: 1.28, y: 2.57}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 2.57}
+  m_EdgeRadius: 0
 --- !u!82 &2032492500
 AudioSource:
   m_ObjectHideFlags: 0

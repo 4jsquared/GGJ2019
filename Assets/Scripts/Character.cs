@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -6,6 +7,13 @@ using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
+	public enum ActionSprites
+	{
+		kHealth,
+		kHappiness,
+		kSocial,
+	};
+
 	// General well being
 	public Statistic health;
 	public Statistic happiness;
@@ -14,66 +22,165 @@ public class Character : MonoBehaviour
 	public Statistic social;
 
     //Thresholds
-    public float healthThreshHoldValue;
-    public float happinessThreasholdValue;
-    public float socialThresholdValue;
+    [SerializeField] private float healthThreshHoldValue;
+	[SerializeField] private float happinessThreasholdValue;
+	[SerializeField] private float socialThresholdValue;
+
+	// Sprites for actions
+	[SerializeField] private Sprite healthBubble;
+	[SerializeField] private Sprite happinessBubble;
+	[SerializeField] private Sprite socialBubble;
+
+	// Sprites for emote
+	[SerializeField] private Sprite healthEmote;
+	[SerializeField] private Sprite happinessEmote;
+	[SerializeField] private Sprite socialEmote;
+
+	[SerializeField] private float spriteScale;
+	[SerializeField] private float spriteOffset;
+
+	[SerializeField] private bool showActions;
+
+
 	// Actions
 	private IEnumerable<StoryAction> characterActions;
 
 
-    //Threshold objects
+    // Threshold objects
     Threshold healthThreshold = new Threshold("health");
     Threshold happinessThreshold = new Threshold("happiness");
     Threshold socialThreshold = new Threshold("social");
     Threshold emptyThreshold = new Threshold("empty");
 
-
     Threshold lowestThreshold;
 
     Threshold[] thresholdList = new Threshold[3];
 
-    //Emote bubble that appears above characters head
-    public Button emoteBubble;
+	// Sprite cloud renderers
+	private SpriteRenderer emoteSprite;
+	private GameObject actionSpriteRoot;
+	private List<GameObject> actionSpriteCloud;
 
-    //Action buttons
-    public Button healthBubble;
-    public Button happinessBubble;
-    public Button socialBubble;
 
-    //Icons for actionButtons
-    public Sprite[] actionStatisticsIcons;
-    
-    //Icons for emoteButton
-    public Sprite[] emoteStatisticsIcons;
 
-    // Use this for initialization
-    void Start ()
+	// Use this for initialization
+	void Start ()
 	{
-        emoteBubble.gameObject.SetActive(false);
         thresholdList[0] = healthThreshold;
         thresholdList[1] = happinessThreshold;
         thresholdList[2] = socialThreshold;
-    }
+
+		// Create a new sprite renderer for the emote
+		GameObject emoteObject = new GameObject(name + " Emote");
+		emoteObject.AddComponent<SpriteRenderer>();
+		emoteObject.transform.parent = transform; // Relative to this object
+		emoteObject.transform.localPosition = new Vector2(0, spriteOffset); // Positioned above
+		emoteObject.transform.localScale = new Vector2(spriteScale, spriteScale);
+
+		emoteSprite = emoteObject.GetComponent<SpriteRenderer>();
+		emoteSprite.enabled = false; // Initially disabled
+		emoteSprite.sortingLayerName = "WorldUI"; // Make sure this renders in the UI layer
+		
+		// Create action sprite cloud
+		actionSpriteRoot = new GameObject(name + " Actions");
+		actionSpriteRoot.transform.parent = transform; // Relative to this object
+		actionSpriteRoot.transform.localPosition = new Vector2(0, 0);
+		actionSpriteRoot.SetActive(false);
+
+		actionSpriteCloud = new List<GameObject>();
+	}
+
+	public void Initialise(IEnumerable<StoryAction> inActions)
+	{
+		characterActions = inActions;
+	}
 
 	private void OnMouseDown()
 	{
-		GetComponent<OptionsAppear>().showHidePanel();
+		showActions = !showActions;
 	}
 
 	// Update is called once per frame
-	void Update() {
+	void Update()
+	{
+		// Calculate emote
         lowestThreshold = emptyThreshold;
         CheckHealthThreshHold();
         CheckHappinessThreshHold();
         CheckSocialThreshHold();
         FindLowestThreshold();
         DisplayIconOfLowestStatistics();
-    }
-	// Use this for initialization
 
-	public void Initialise(IEnumerable<StoryAction> inActions)
+		// Calculate actions
+		if (showActions)
+		{
+			StoryAction[] actions = GetAvailableActions().ToArray();
+
+			if (actions.Count() != actionSpriteCloud.Count)
+			{
+				// Recalculate and position renderers
+
+				// Get the correct number of sprites
+				while (actions.Count() > actionSpriteCloud.Count)
+					actionSpriteCloud.Add(CreateActionSprite());
+				if (actions.Count() < actionSpriteCloud.Count)
+					actionSpriteCloud.RemoveRange(actions.Count(), actionSpriteCloud.Count - actions.Count());
+
+				// Calculate position
+				int numPositions = actionSpriteCloud.Count + 1; // Don't forget emote buble space
+				float anglePerObject = Mathf.PI * 2 / numPositions;
+
+				for (int i = 0; i < actionSpriteCloud.Count; i++)
+				{
+					actionSpriteCloud[i].transform.localPosition = spriteOffset * new Vector2(
+						Mathf.Sin((i + 1) * anglePerObject),
+						Mathf.Cos((i + 1) * anglePerObject)
+					);
+				}
+			}
+
+			// Set the correct sprite and click event
+			for (int i = 0; i < actionSpriteCloud.Count; i++)
+			{
+				actionSpriteCloud[i].GetComponent<SpriteRenderer>().sprite = GetSpriteForAction(actions[i].GetActionDescription());
+			}
+
+			// Activate
+			actionSpriteRoot.SetActive(true);
+		}
+		else
+		{
+			actionSpriteRoot.SetActive(false);
+		}
+    }
+
+	private GameObject CreateActionSprite()
 	{
-		characterActions = inActions;
+		GameObject actionObject = new GameObject(name + " Action");
+
+		actionObject.AddComponent<SpriteRenderer>();
+		actionObject.AddComponent<BoxCollider2D>();
+
+		actionObject.transform.parent = actionSpriteRoot.transform; // Relative to root
+		actionObject.transform.localScale = new Vector2(spriteScale, spriteScale);
+		actionObject.GetComponent<SpriteRenderer>().sortingLayerName = "WorldUI"; // Make sure this renders in the UI layer
+
+		return actionObject;
+	}
+
+	private Sprite GetSpriteForAction(ActionSprites actionSprite)
+	{
+		switch (actionSprite)
+		{
+			case ActionSprites.kHappiness:
+				return happinessBubble;
+			case ActionSprites.kHealth:
+				return healthBubble;
+			case ActionSprites.kSocial:
+				return socialBubble;
+			default:
+				throw new InvalidOperationException("Invalid action sprite");
+		}
 	}
 
 	// List of available actions. This is auto populated
@@ -87,24 +194,23 @@ public class Character : MonoBehaviour
     {
         if (lowestThreshold.name == "health")
         {
-            emoteBubble.image.sprite = emoteStatisticsIcons[0];
-            emoteBubble.gameObject.SetActive(true);
-
+            emoteSprite.sprite = healthEmote;
+            emoteSprite.enabled = true;
         }
         else if (lowestThreshold.name == "happiness")
         {
-            emoteBubble.image.sprite = emoteStatisticsIcons[2];
-            emoteBubble.gameObject.SetActive(true);
+            emoteSprite.sprite = happinessEmote;
+            emoteSprite.enabled = true;
 
         }
         else if (lowestThreshold.name == "social")
         {
-            emoteBubble.image.sprite = emoteStatisticsIcons[1];
-            emoteBubble.gameObject.SetActive(true);
+            emoteSprite.sprite = socialEmote;
+            emoteSprite.enabled = true;
         }
         else
         {
-            emoteBubble.gameObject.SetActive(false);
+            emoteSprite.enabled = false;
         }
     }
 

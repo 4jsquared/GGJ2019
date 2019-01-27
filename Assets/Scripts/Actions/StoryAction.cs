@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class StoryAction : MonoBehaviour
 {
-	[SerializeField] private string description;
+	[SerializeField] private Character.ActionSprites description;
 
 	protected World world;
 	protected Player player;
@@ -16,9 +16,7 @@ public abstract class StoryAction : MonoBehaviour
 	}
 
 	// How should we describe this action
-	// TODO this should probably be edited to be most convenient for how the UI wants to work
-	// TODO may need to be overriden for specific actions
-	public string GetActionDescription()
+	public Character.ActionSprites GetActionDescription()
 	{
 		return description;
 	}
