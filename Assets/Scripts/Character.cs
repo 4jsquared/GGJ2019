@@ -201,7 +201,7 @@ public class Character : MonoBehaviour
 
 		CircleCollider2D collider = actionObject.GetComponent<CircleCollider2D>();
 		collider.isTrigger = true;
-		collider.radius = spriteScale;
+		collider.radius = 1;
 		
 		OptionsAction optionsAction = actionObject.GetComponent<OptionsAction>();
 		optionsAction.character = this;
