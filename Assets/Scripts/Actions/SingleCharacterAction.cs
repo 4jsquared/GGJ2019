@@ -71,8 +71,7 @@ public class SingleCharacterAction : StoryAction
 
 	public override bool IsAvailable()
 	{
-		// TODO Check other factors for availablity
-		return player.money >= money;
+		return player.money >= -money;
 	}
 
 	public override bool IsPlayerAction()
