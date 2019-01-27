@@ -10,9 +10,12 @@ public class Storyteller : MonoBehaviour
 	public Player player;
 	public Character[] characters;
 
+
+	// Time progression
 	public ClockSpinner[] clocks;
 	[SerializeField] private float clockMultiplierSlow = 1;
 	[SerializeField] private float clockMultiplierFast = 2;
+	[SerializeField] private float realTimeToGameTimeMultiplier = 0.1f;
 
 
 	// Events
@@ -72,6 +75,9 @@ public class Storyteller : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		// Increment the world time by our real time factor
+		world.time += Time.deltaTime * realTimeToGameTimeMultiplier;
+
 		// Calculate elapsed time since last update
 		float timeIncrement = world.time - elapsedTime;
 		elapsedTime = world.time;
