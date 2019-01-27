@@ -3098,7 +3098,7 @@ MonoBehaviour:
   - {fileID: 882484467}
   - {fileID: 696563271}
   backgroundAudio: {fileID: 1240319077}
-  playerAudio: {fileID: 0}
+  playerAudio: {fileID: 731062911}
   sadAudio: {fileID: 245400340}
 --- !u!82 &1240319077
 AudioSource:
