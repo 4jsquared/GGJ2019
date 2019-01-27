@@ -136,6 +136,9 @@ public class Character : MonoBehaviour
 				// Get the correct number of sprites
 				while (actions.Count() > actionSpriteCloud.Count)
 					actionSpriteCloud.Add(CreateActionSprite());
+				// Remove sprites
+				for (int i = actions.Count(); i < actionSpriteCloud.Count; i++)
+					Destroy(actionSpriteCloud[i].gameObject);
 				if (actions.Count() < actionSpriteCloud.Count)
 					actionSpriteCloud.RemoveRange(actions.Count(), actionSpriteCloud.Count - actions.Count());
 
