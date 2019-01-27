@@ -5,23 +5,16 @@ using UnityEngine;
 public class Volumer : MonoBehaviour
 {
 
-    public AudioSource whistleAudio;
-    public AudioSource guitarAudio;
-    public AudioSource backingAudio;
-    public AudioSource sadAudio;
+	public AudioSource[] monitorSources;
+	public AudioSource backgroundAudio;
+	public AudioSource playerAudio;
+	public AudioSource sadAudio;
 
-    // Use this for initialization
-    void Start ()
-    {
-        AudioSource whistleAudio = GetComponent<AudioSource>();
-        AudioSource guitarAudio = GetComponent<AudioSource>();
-        AudioSource backingAudio = GetComponent<AudioSource>();
-        AudioSource sadAudio = GetComponent<AudioSource>();
-    }
 	
 	// Update is called once per frame
 	void Update ()
     {
+		/*
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             whistleAudio.volume = whistleAudio.volume - .1f;
@@ -34,13 +27,21 @@ public class Volumer : MonoBehaviour
                 guitarAudio.volume = guitarAudio.volume - .1f;
             }
         }
-        if (guitarAudio.volume <= 0f)
-        {
-            backingAudio.volume = backingAudio.volume - .1f;
-        }
-        if (backingAudio.volume <= 0f)
-        {
-            sadAudio.volume = sadAudio.volume + .1f;
+		*/
+		int numSilentSources = 0;
+		foreach (AudioSource source in monitorSources)
+		{
+			if (source.volume <= Mathf.Epsilon)
+				numSilentSources++;
+		}
+
+		float backgroundTarget = ((float)(monitorSources.Length - numSilentSources)) / monitorSources.Length;
+		backgroundAudio.volume = Mathf.Clamp(backgroundTarget, backgroundAudio.volume - 0.1f, 1);
+
+		if (backgroundTarget <= Mathf.Epsilon)
+		{
+			playerAudio.volume = Mathf.Clamp01(sadAudio.volume + .1f);
+			sadAudio.volume = Mathf.Clamp01(sadAudio.volume + .1f);
         }
 
     }
